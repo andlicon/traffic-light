@@ -5,12 +5,12 @@ import '../../styles/semaforo.css';
 
 const Semaforo = props => {
     const estilosSemaforo = {
-        width: props.ancho,
-        height: props.alto
+        width: props.anchoPx,
+        height: props.altoPx
     };
     const estilosTop = {
-        width: props.ancho/10,
-        height: props.alto/5
+        width: props.anchoPx/10,
+        height: props.altoPx/5
     };
 
     return(
@@ -29,7 +29,7 @@ const Semaforo = props => {
     );
 };
 Semaforo.propTypes = { 
-    width: PropTypes.string, // El numero + su unidad (ejemplo): 300px
-    height: PropTypes.string // El numero + su unidad (ejemplo): 300px
+    anchoPx: PropTypes.number, // Unidad a usar: pixel
+    altoPx: PropTypes.number // Unidad a usar: pixel
 };
 export default Semaforo;

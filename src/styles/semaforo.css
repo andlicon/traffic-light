@@ -6,10 +6,17 @@
     align-items: center;
 }
 .semaforoTop {
+    /* estilos */
     background-color: black;
-    height: 20%;
-    width: 20%;
 }
 .semaforo {
-    background-color: red;
+    /* caja */
+    border-radius: 1em;
+    /* posicion */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    /* estilos */
+    background-color: black;
 }

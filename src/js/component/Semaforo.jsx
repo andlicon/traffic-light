@@ -36,6 +36,7 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
     async function alternarHandler () {
         limpiarLoop();
 
+        alternarColores();
         setLoop(setInterval( () => {
             alternarColores();
         }, 3000))
@@ -69,9 +70,6 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
                 <button onClick={alternarHandler}>
                     Alternar
                 </button>
-                <br />
-                <input type="text" placeholder="width" onChange={ ({target}) => setWidthPx(Number.parseInt(target.value)) }/>
-                <input type="text" placeholder="height" onChange={ ({target}) => setHeightPx(Number.parseInt(target.value)) }/>
             </div>
         </div>
     );

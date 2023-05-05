@@ -14,7 +14,7 @@ const Home = () => {
 		<>
 			<Semaforo 
 				anchoPx={200} 
-				luces={luces}
+				lucesInput={luces}
 			/>
 		</>
 	);

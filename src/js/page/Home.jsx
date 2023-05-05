@@ -4,10 +4,10 @@ import Semaforo from '../component/Semaforo.jsx';
 
 //create your first component
 const Home = () => {
-	const colores = [
-		"red",
-		"orange",
-		"green"
+	const luces = [
+		'red',
+		'orange',
+		'green'
 	];
 
 	return (
@@ -15,7 +15,7 @@ const Home = () => {
 			<Semaforo 
 				altoPx={400} 
 				anchoPx={200} 
-				luces={colores}
+				luces={luces}
 			/>
 		</>
 	);

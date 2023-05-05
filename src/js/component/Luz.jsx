@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 
 import '../../styles/luz.css';
 
-const Luz = props => {
-    const [color, setColor] = useState(props.color);
-    const [activado, setActivado] = useState(false);
-
+const Luz = ({ color, brilla }) => {
     return(
         <div 
-            className="luz"
+            className={`luz ${brilla ? 'selected' : ''}`}
             style={{backgroundColor: color}}
         >
         </div>

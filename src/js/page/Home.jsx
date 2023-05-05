@@ -6,7 +6,7 @@ import Semaforo from '../component/Semaforo.jsx';
 const Home = () => {
 	return (
 		<>
-			<Semaforo />
+			<Semaforo alto={400} ancho={200} />
 		</>
 	);
 };

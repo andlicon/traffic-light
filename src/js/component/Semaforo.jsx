@@ -6,6 +6,7 @@ import Luz from './Luz.jsx';
 
 const Semaforo = ({anchoPx, altoPx, luces}) => {
     const [brilla, setBrilla] = useState(null);
+    const [loop, setLoop] = useState(null);
 
     const tamanoSemaforo = {
         width: anchoPx,
@@ -18,10 +19,35 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
 
     const semaforoHandler = ({ target }) => {
         if(target.className.includes('luz')) {
+            limpiarLoop();
+            
             const color = target.style.backgroundColor;
             setBrilla(color);
         }
+    };
+
+    const limpiarLoop = () => {
+        if(loop != null) {
+            clearInterval(loop);
+        }
     }
+
+    async function alternarColores () {
+        const timer = ms => new Promise(res => setTimeout(res, ms))
+
+        for(let i=0; i<luces.length; i++) {
+            setBrilla(luces[i]);
+            await timer(1000);
+        }
+    }
+
+    async function alternarHandler () {
+        limpiarLoop();
+
+        setLoop(setInterval( () => {
+            alternarColores();
+        }, 3000))
+    };
 
     return(
         <div className='semaforo-container'>
@@ -46,6 +72,11 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
                         )
                     })
                 }
+            </div>
+            <div className="semaforoBotones">
+                <button onClick={alternarHandler}>
+                    Alternar
+                </button>
             </div>
         </div>
     );

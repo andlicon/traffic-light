@@ -13,7 +13,6 @@ const Home = () => {
 	return (
 		<>
 			<Semaforo 
-				altoPx={400} 
 				anchoPx={200} 
 				luces={luces}
 			/>

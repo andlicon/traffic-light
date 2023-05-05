@@ -5,22 +5,14 @@ import '../../styles/semaforo.css';
 import Luz from './Luz.jsx';
 
 const Semaforo = ({anchoPx, altoPx, luces}) => {
+    const [widthPx, setWidthPx] = useState(anchoPx);
     const [brilla, setBrilla] = useState(null);
     const [loop, setLoop] = useState(null);
-
-    const tamanoSemaforo = {
-        width: anchoPx,
-        height: altoPx
-    };
-    const tamanoTop = {
-        width: anchoPx/10,
-        height: altoPx/5
-    };
 
     const semaforoHandler = ({ target }) => {
         if(target.className.includes('luz')) {
             limpiarLoop();
-            
+
             const color = target.style.backgroundColor;
             setBrilla(color);
         }
@@ -53,12 +45,12 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
         <div className='semaforo-container'>
             <div 
                 className="semaforoTop"
-                style={tamanoTop}
+                style={{width: widthPx/10}}
             >
             </div>
             <div 
                 className="semaforo"
-                style={tamanoSemaforo}
+                style={{width: widthPx}}
                 onClick={semaforoHandler}
             >
                 {
@@ -77,6 +69,9 @@ const Semaforo = ({anchoPx, altoPx, luces}) => {
                 <button onClick={alternarHandler}>
                     Alternar
                 </button>
+                <br />
+                <input type="text" placeholder="width" onChange={ ({target}) => setWidthPx(Number.parseInt(target.value)) }/>
+                <input type="text" placeholder="height" onChange={ ({target}) => setHeightPx(Number.parseInt(target.value)) }/>
             </div>
         </div>
     );

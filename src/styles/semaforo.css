@@ -8,11 +8,13 @@
 .semaforoTop {
     /* estilos */
     background-color: black;
+    aspect-ratio: 1/2;
 }
 .semaforo {
     /* caja */
-    padding: 1em 2em;
+    padding: 2em;
     border-radius: 1em;
+    aspect-ratio: 1/2;
     /* posicion */
     display: flex;
     flex-flow: column nowrap;
